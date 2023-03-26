@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- <title>Центр мультимедиа Русского музея</title> -->
+    <script src="JS/mindar-image.prod.js"></script>
+    <script src="JS/aframe.min.js"></script>
+    <script src="JS/aframe-extras.min.js"></script>
+    <script src="JS/mindar-image-aframe.prod.js"></script>
+	  </head>
+
+  <body style="margin: 0; overflow: hidden;" background="images/ar fon.jpg">
+
+	  <a-scene mindar-image=" imageTargetSrc: assets/targets.mind; filterMinCF:0.001; filterBeta: 0.001; maxTrack: 4"  color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+		<a-asset-item id="minecraftModel" src="assets/1/minecraft_anim_Z_Karaul.gltf"></a-asset-item>
+        <a-asset-item id="peterModel" src="assets/1/petr_LOW_texture4.gltf"></a-asset-item>
+		<a-asset-item id="minecraftBModel" src="assets/1/minecraft_anim_S_Karaul.gltf"></a-asset-item>
+		<a-asset-item id="oficerModel" src="assets/1/oficer_anim_2.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model rotation="180 90 90 " position="0 0 0" scale="0.5 0.5 0.5" src="#oficerModel" animation-mixer>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 3">
+        <a-gltf-model rotation="90 0 0 " position="0 0.5 0" scale="0.4 0.4 0.4" src="#minecraftModel" animation-mixer>
+	  </a-entity>
+	  <a-entity mindar-image-target="targetIndex: 2">
+        <a-gltf-model rotation="90 0 0 " position="0 0.5 0" scale="0.4 0.4 0.4" src="#minecraftBModel" animation-mixer>
+	  </a-entity>
+	  <a-entity mindar-image-target="targetIndex: 1">
+        <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.07 0.07 0.07" src="#peterModel" animation-mixer>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
